@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}
+{{object.zone_name}}
+{% endblock head_title %}
+
+
+
+{% block content %}
+<br>
+{{object.zone_name}}
+<hr>
+
+{% for agency in object.agencies.all %}
+<ul>
+    <li>{{agency.agency_name}}</li>
+</ul>
+{% endfor %}
+
+{% endblock content %}

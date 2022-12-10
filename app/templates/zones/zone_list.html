@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}
+Zones
+{% endblock head_title %}
+
+
+{% block content %}
+<div class="container-fluid py-5">
+
+    <div class="row">
+        {% for zone in object_list %}
+        <div class="col-lg-2 px-0 mx-auto mb-5">
+            <div
+                class="text-center bg-success p-3 text-light border-warning shadow-lg rounded-5">
+                <div class="bg-success">
+                    <h3 class="text-center text-white">
+                        {{zone.technician.technician_name}}</h3>
+                </div>
+                <hr>
+                <h5 class="fw-bold">{{zone.zone_name}}({{zone.agencies.count}})
+                </h5>
+            </div>
+            <br>
+            <div class="p-3 rounded-5 shadow-lg text-center text-dark border">
+                {% for agency in zone.agencies.all %}
+                <p class="m-0">{{agency.agency_name}}</p>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
