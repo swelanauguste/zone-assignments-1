@@ -8,29 +8,55 @@ Zones
 
 {% block content %}
 <div class="container-fluid py-5">
-
     <div class="row">
         {% for zone in object_list %}
-        <div class="col-lg-2 px-0 mx-auto mb-5">
-            <div
+        <div class="col-lg-2 px-0 mx-auto"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal{{zone.pk}}">
+            <div style="cursor: pointer;"
                 class="text-center bg-success p-3 text-light border-warning shadow-lg rounded-5">
                 <div class="bg-success">
-                    <h3 class="text-center text-white">
-                        {{zone.technician.technician_name}}</h3>
+                    <p class="text-center text-white fw-bold">
+                        {{zone.technician.technician_name}}</p>
                 </div>
                 <hr>
-                <h5 class="fw-bold">{{zone.zone_name}}({{zone.agencies.count}})
-                </h5>
+                <p class="">{{zone.zone_name}}({{zone.agencies.count}})
+                </p>
             </div>
             <br>
-            <div class="p-3 rounded-5 shadow-lg text-center text-dark border">
-                {% for agency in zone.agencies.all %}
-                <p class="m-0">{{agency.agency_name}}</p>
-                {% endfor %}
+            <!-- Modal -->
+            <div class="modal fade"
+                id="exampleModal{{zone.pk}}"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5"
+                                id="exampleModalLabel">
+                                {{zone.technician.technician_name}} 
+                                <br>
+                                <span> {{zone.zone_name|upper}}</span>
+                            </h1>
+                            <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            {% for agency in zone.agencies.all %}
+                            <p class="m-0">{{agency.agency_name}}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
+
+
 
 {% endblock content %}
