@@ -2,3 +2,4 @@ django
 black
 gunicorn
 django-pwa
+tzdata
