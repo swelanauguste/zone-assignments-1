@@ -120,7 +120,7 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-PWA_APP_NAME = "Zones"
+PWA_APP_NAME = "zones-kingship"
 PWA_APP_DESCRIPTION = "Zone assignments"
 PWA_APP_THEME_COLOR = "#0A0302"
 PWA_APP_BACKGROUND_COLOR = "#ffffff"
@@ -141,4 +141,4 @@ PWA_APP_SPLASH_SCREEN = [
 ]
 PWA_APP_DIR = "ltr"
 PWA_APP_LANG = "en-US"
-PWA_APP_DEBUG_MODE = False
+PWA_APP_DEBUG_MODE = True
