@@ -1,29 +1,26 @@
 {% extends 'base.html' %}
 
-
 {% block head_title %}
 Zones -
 {% endblock head_title %}
 
-
 {% block content %}
-<div class="container-fluid py-5">
+<div class="container-fluid mt-3">
     <div class="row">
         {% for zone in object_list %}
         <div class="col-lg-2 px-0 mx-auto"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal{{zone.pk}}">
             <div style="cursor: pointer;"
-                class="text-center bg-success p-3 text-light border-warning shadow-lg rounded-5">
-                <div class="bg-success">
-                    <p class="text-center text-white fw-bold">
+                class="text-center bg-success p-3 mb-1 text-light border-warning shadow-lg rounded-4">
+                <div class="bg-success rounded-4">
+                    <p class="text-center text-white fw-bold rounded-5">
                         {{zone.technician.technician_name}}</p>
                 </div>
                 <hr>
                 <p class="">{{zone.zone_name}}({{zone.agencies.count}})
                 </p>
             </div>
-            <br>
             <!-- Modal -->
             <div class="modal fade"
                 id="exampleModal{{zone.pk}}"
@@ -31,19 +28,21 @@ Zones -
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
+                    <div class="modal-content  rounded-4">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5"
-                                id="exampleModalLabel">
-                                {{zone.technician.technician_name}} 
-                                <br>
-                                <span> {{zone.zone_name|upper}}</span>
-                            </h1>
                             <button type="button"
                                 class="btn-close"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
+                        <div class="text-center">
+                            <h1 class="modal-title fs-5 fw-bold">
+                                {{zone.technician.technician_name}}
+                                <br>
+                                <span> {{zone.zone_name|upper}}</span>
+                            </h1>
+                        </div>
+                        <hr>
                         <div class="modal-body text-center">
                             {% for agency in zone.agencies.all %}
                             <p class="m-0">{{agency.agency_name}}</p>
@@ -56,7 +55,4 @@ Zones -
         {% endfor %}
     </div>
 </div>
-
-
-
 {% endblock content %}
