@@ -28,8 +28,8 @@ Zones -
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content  rounded-4">
-                        <div class="modal-header">
+                    <div class="modal-content rounded-4">
+                        <div class="modal-header border-0">
                             <button type="button"
                                 class="btn-close"
                                 data-bs-dismiss="modal"
@@ -43,7 +43,7 @@ Zones -
                             </h1>
                         </div>
                         <hr>
-                        <div class="modal-body text-center">
+                        <div class="modal-body text-center pb-5">
                             {% for agency in zone.agencies.all %}
                             <p class="m-0">{{agency.agency_name}}</p>
                             {% endfor %}
