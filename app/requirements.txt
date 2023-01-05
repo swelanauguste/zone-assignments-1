@@ -3,3 +3,4 @@ black
 gunicorn
 django-pwa
 tzdata
+psycopg2-binary

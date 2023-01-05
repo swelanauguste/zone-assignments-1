@@ -10,7 +10,7 @@ ZONES_LIST = [
     "Zone Five",
 ]
 
-Zone.objects.all().delete()
+# Zone.objects.all().delete()
 
 
 

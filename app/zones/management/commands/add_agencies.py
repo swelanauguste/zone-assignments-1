@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 
 from ...models import Agency, Zone
 
-Agency.objects.all().delete()
+# Agency.objects.all().delete()
 
 ZONE_ONE_AGENCIES = [
     "Audit",

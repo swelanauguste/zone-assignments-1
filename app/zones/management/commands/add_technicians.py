@@ -10,7 +10,7 @@ TECHNICIAN_LIST = [
     "Samuel Edmund",
 ]
 
-Technician.objects.all().delete()
+# Technician.objects.all().delete()
 
 
 
