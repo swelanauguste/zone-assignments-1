@@ -23,6 +23,7 @@ services:
       - POSTGRES_USER=zones
       - POSTGRES_PASSWORD=zones
       - POSTGRES_DB=zones
+    restart: always
 
 volumes:
   postgres_data:
